@@ -88,6 +88,18 @@ def create_yolo_target(label):#将label转化为模型训练所需格式:[7,7,13
 
 
 
+def create_cls_list(dataset):#返回指定数据集的cls列表
+    cls_path=os.path.join("datasets",dataset,"classes.txt")
+    cls_list=[]
+    with open(cls_path) as f:
+        cls_content=f.read()
+        cls_names=cls_content.strip().split("\n")
+        for cls_name in cls_names:
+            cls_list.append(cls_name)
+    return cls_list
+
+
+
 if __name__=="__main__":
     train_dataset=YoloDataset("datasets/cst_yolo/images/train",
                               "datasets/cst_yolo/labels/train",
@@ -100,3 +112,5 @@ if __name__=="__main__":
     img,label=train_dataset[0]
     print(img.shape)
     print(label.shape)
+    cls_list=create_cls_list("cst_yolo")
+    print(cls_list)

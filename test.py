@@ -2,7 +2,7 @@
 模型测试
 """
 from model import YoloModel
-from yolo_dataset import YoloDataset,create_yolo_target
+from yolo_dataset import YoloDataset,create_yolo_target,create_cls_list
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 import torch
@@ -96,7 +96,7 @@ for i in range(show_num):
                 start_idx=box_idx*5
                 conf=pred[grid_y,grid_x,start_idx+4]#置信度
                 cls=torch.argmax(pred[grid_y,grid_x,10:13],dim=0).item()#类别
-                cls_list=["circle","square","triangle"]
+                cls_list=create_cls_list("cst_yolo")
                 if conf>0.5:#若置信度大于0.5，则画框
                     #解码bbox
                     x_offset=pred[grid_y,grid_x,start_idx].item()

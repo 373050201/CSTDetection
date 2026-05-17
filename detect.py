@@ -6,6 +6,7 @@ from PIL import Image,ImageDraw
 from model import YoloModel
 from torchvision import transforms
 import matplotlib.pyplot as plt
+from yolo_dataset import create_cls_list
 
 
 
@@ -40,7 +41,7 @@ for grid_y in range(7):
             start_idx=box_idx*5
             conf=pred[grid_y,grid_x,start_idx+4]#置信度
             cls=torch.argmax(pred[grid_y, grid_x,10:13],dim=0).item()#类别
-            cls_list=["circle","square","triangle"]
+            cls_list=create_cls_list("cst_yolo")
             if conf>0.5:#若置信度大于0.5，则画框
                 #解码bbox
                 x_offset=pred[grid_y,grid_x,start_idx].item()
