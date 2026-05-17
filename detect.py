@@ -59,6 +59,7 @@ for grid_y in range(7):
                 draw.rectangle(xy=[x_min,y_min,x_max,y_max],outline="green",width=2)#绘制矩形
                 draw.text(xy=(x_min,y_min-25),text=f"{cls_list[cls]}",fill="green",font_size=20)#绘制预测类别
 
+img.save("detect/result.jpg")
 plt.imshow(img)#可视化图片
 plt.axis("off")
 plt.show()
