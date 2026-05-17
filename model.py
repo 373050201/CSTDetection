@@ -10,7 +10,7 @@ import torchvision.models as models
 
 
 class YoloModel(nn.Module):#yolo风格模型
-    def __init__(self,S=7,B=2,C=3):
+    def __init__(self,S=7,B=2,C=3):#CST数据集中，C=3
         super(YoloModel, self).__init__()
         self.S=S,#将img划分为S*S个网格
         self.B=B,#每个网格有B个bbox
