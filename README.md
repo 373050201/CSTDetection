@@ -30,11 +30,11 @@
 
 1、特征提取模块：采用MobileNetV2的特征提取层（无预训练）。
 
-![](C:\Users\37305\AppData\Roaming\marktext\images\2026-05-19-18-36-07-image.png)
+![](./README_imgs/1.png)
 
 2、特征处理模块：采用Conv+BN+LeakyReLU的叠加来下采样和细化特征。
 
-![](C:\Users\37305\AppData\Roaming\marktext\images\2026-05-19-18-40-16-image.png)
+<img src="./README_imgs/2.png" title="" alt="" width="709">
 
 ### ——性能结果——
 
@@ -52,8 +52,4 @@
 
 --此示例存放于detect目录下：
 
-<img title="" src="file:///C:/Users/37305/AppData/Roaming/marktext/images/2026-05-19-19-36-59-image.png" alt="" width="299">===><img title="" src="file:///C:/Users/37305/AppData/Roaming/marktext/images/2026-05-19-19-37-59-image.png" alt="" width="305">
-
-
-
-
+<img title="" src="./README_imgs/3.png" alt="" width="703">           
