@@ -113,6 +113,7 @@ for i in range(show_num):
                     draw=ImageDraw.Draw(img)#创建Draw类的对象
                     draw.rectangle(xy=[x_min,y_min,x_max,y_max],outline="green",width=2)#绘制矩形
                     draw.text(xy=(x_min,y_min-25),text=f"{cls_list[cls]}",fill="green",font_size=20)#绘制预测类别
+                    draw.text(xy=(x_min,y_max),text=f"conf:{conf:.2f}",fill="red",font_size=12)#绘制置信度
 
     plt.imshow(img)#可视化图片
     plt.axis("off")
