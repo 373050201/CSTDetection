@@ -55,10 +55,10 @@ class YoloDataset(Dataset):
 label={
         "obj_num": #目标个数
         "clses":#类别
-        "bboxes":#预测框
+        "bboxes":#真实框
     }
 """
-def create_yolo_target(label):#将label转化为模型训练所需格式:[7,7,13]
+def create_yolo_target(label):#将label转化为模型输出相同格式的target:[7,7,13]
     S=7;B=2;C=3
     target=torch.zeros((S,S,B*5+C))#此处target形状：[7,7,13]，13包括(2*(x_offset,y_offset,w,h,conf)+3*cls)
     clses=label["clses"]
